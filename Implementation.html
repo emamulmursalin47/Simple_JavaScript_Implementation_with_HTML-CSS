@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+  
+    <style>
+        body {
+            background-color: rgb(24, 100, 49);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: white;
+            color: blue;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f1f1f1;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Logo styling */
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="R.png" alt="Department of ICE Logo" class="logo">
+
+        <h1 style="font-family: Poppins;">Log in to the Department of ICE!</h1>
+
+        <form onsubmit="return validateForm()">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="greeting"></p>
+        <p id="currentDate"></p>
+    </div>
+
+    <script>
+        // JavaScript Validation
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+                alert("Please fill in all the fields.");
+                return false;
+            }
+        }
+
+        // JavaScript If-Else Time-Based Greetings
+        var currentTime = new Date();
+        var currentHour = currentTime.getHours();
+
+        var greeting = "";
+        if (currentHour < 12) {
+            greeting = "Good morning!";
+        } else if (currentHour < 18) {
+            greeting = "Good afternoon!";
+        } else {
+            greeting = "Good evening!";
+        }
+
+        document.getElementById("greeting").innerText = greeting;
+
+        // JavaScript Dates Using `new Date()`
+        var currentDate = new Date().toLocaleDateString();
+        document.getElementById("currentDate").innerText = "Today's date: " + currentDate;
+    </script>
+    <h2 style="text-align:center;">Turn on your light of life</h2>
+    <p align="center">Dept of ICE can change life by turning of the light of your life</p>
+    <p align="center"> Dept of ICE is just like the light bulb below, it will bring light to your darken life</p>
+    <div align="center">
+        <button onclick="document.getElementById('myImage').src='On.PNG'">Turn
+            on the light</button>
+            <img id="myImage" src="off.png" style="width:100px">
+            <button onclick="document.getElementById('myImage').src='off.PNG'">Turn
+            off the light</button>
+    </div>
+    <p>Developed by Md Emamul Mursalin</p>
+    <br>
+    <p> ICE 9th Batch</p>
+   
+</body>
+</html>
